@@ -1,0 +1,33 @@
+{
+  "name": "fsopenpart3",
+  "version": "1.0.0",
+  "description": "fsopenpart3backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/techbone/Fullstack-Open-Part3.git"
+  },
+  "keywords": [
+    "node",
+    "react",
+    "and",
+    "express"
+  ],
+  "author": "Musa Muhammad Etudaye <musaawwaletudaye@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techbone/Fullstack-Open-Part3/issues"
+  },
+  "homepage": "https://github.com/techbone/Fullstack-Open-Part3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
