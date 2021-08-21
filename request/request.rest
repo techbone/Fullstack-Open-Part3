@@ -10,6 +10,5 @@ POST http://localhost:3001/api/persons
 content-type:application/json
 
 {
-  "name":"Musa Muhammad",
   "number":"07063235116"
 }

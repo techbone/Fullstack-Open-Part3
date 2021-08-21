@@ -1,4 +1,3 @@
-const { response } = require("express");
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -7,7 +6,7 @@ const generateId = () => {
   return maxId + 1;
 };
 
-persons = [
+let persons = [
   {
     id: 1,
     name: "Arto Hellas",
@@ -69,12 +68,18 @@ app.post("/api/persons", (request, response) => {
     return response.status(204).json({
       error: "content missing",
     });
-  }
-  if (!body.name || !body.number) {
+  } else if (!body.name || !body.number) {
     return response.status(400).json({
       error: "Name or number is missing",
     });
+  } else if (
+    persons.find((person) => {
+      return person.name === body.name;
+    })
+  ) {
+    response.status(409).send({ error: "Name must be unique!" });
   }
+
   const person = {
     id: generateId(),
     name: body.name,
