@@ -1,14 +1,27 @@
+const { response } = require("express");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-app.use(morgan("tiny"));
+// app.use(morgan("tiny"));
 app.use(express.json());
 
+morgan.token("body", (req, res) => JSON.stringify(req.body));
+
+app.use(
+  morgan(":method :url :status :res[content-length] - :response-time ms :body")
+);
 const generateId = () => {
   const maxId = persons.length > 0 ? Math.max(...persons.map((n) => n.id)) : 0;
   return maxId + 1;
 };
-
+// const requestLogger = (request, response, next) => {
+//   console.log("Method:", request.method);
+//   console.log("Path:  ", request.path);
+//   console.log("Body:  ", request.body);
+//   console.log("---");
+//   next();
+// };
+// app.use(requestLogger);
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
 };
