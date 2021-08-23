@@ -1,9 +1,16 @@
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
+app.use(morgan("tiny"));
 app.use(express.json());
+
 const generateId = () => {
   const maxId = persons.length > 0 ? Math.max(...persons.map((n) => n.id)) : 0;
   return maxId + 1;
+};
+
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: "unknown endpoint" });
 };
 
 let persons = [
@@ -90,6 +97,8 @@ app.post("/api/persons", (request, response) => {
 
   return response.json(person);
 });
+
+app.use(unknownEndpoint);
 
 const PORT = 3001;
 app.listen(PORT, () => {
