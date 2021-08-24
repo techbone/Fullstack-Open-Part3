@@ -1,9 +1,9 @@
-const { response } = require("express");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-// app.use(morgan("tiny"));
 app.use(express.json());
+const cors = require("cors");
+app.use(cors());
 
 morgan.token("body", (req, res) => JSON.stringify(req.body));
 
@@ -14,14 +14,6 @@ const generateId = () => {
   const maxId = persons.length > 0 ? Math.max(...persons.map((n) => n.id)) : 0;
   return maxId + 1;
 };
-// const requestLogger = (request, response, next) => {
-//   console.log("Method:", request.method);
-//   console.log("Path:  ", request.path);
-//   console.log("Body:  ", request.body);
-//   console.log("---");
-//   next();
-// };
-// app.use(requestLogger);
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
 };
@@ -113,7 +105,7 @@ app.post("/api/persons", (request, response) => {
 
 app.use(unknownEndpoint);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

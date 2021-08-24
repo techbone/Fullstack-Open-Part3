@@ -10,6 +10,7 @@ POST http://localhost:3001/api/persons
 content-type:application/json
 
 {
-  "name":"Madara Uchia",
-  "number":"07063235116"
+"name":"Ayanokouji Kiyotaka",
+"number":"07063235116"
 }
+
