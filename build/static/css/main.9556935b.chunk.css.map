@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,QACE,UAAW,CACX,eAAgB,CAChB,cACF","file":"main.9556935b.chunk.css","sourcesContent":[".person {\n  color: grey;\n  padding-top: 5px;\n  font-size: 15px;\n}\n"]}
