@@ -34,6 +34,21 @@ let persons = [
     name: "Mary Poppendieck",
     number: "39-23-6423122",
   },
+  {
+    id: 5,
+    name: "Ayanokouji kiyotaka ",
+    number: "07063235116",
+  },
+  {
+    id: 6,
+    name: "Ayanokouji kiyotaka  Awwal",
+    number: "07063235116",
+  },
+  {
+    id: 7,
+    name: "Kakashi Hatake",
+    number: "07063235116",
+  },
 ];
 
 app.get("/", (request, response) => {

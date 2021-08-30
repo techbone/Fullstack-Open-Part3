@@ -10,7 +10,7 @@ POST http://localhost:3001/api/persons
 content-type:application/json
 
 {
-"name":"Ayanokouji kiyotaka ",
+"name":"Kakashi Hatake",
 "number":"07063235116"
 }
 
