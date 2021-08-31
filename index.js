@@ -13,7 +13,7 @@ morgan.token("body", (req, res) => JSON.stringify(req.body));
 const Person = require("./models/person");
 
 const url = process.env.MONGODB_URI;
-console.log("connecting to", url);
+console.log("connecting to:", url);
 
 mongoose
   .connect(url, {
