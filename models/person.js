@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const phonebookSchema = new mongoose.Schema({
   name: String,
-  number: String,
+  number: Number,
 });
 
 phonebookSchema.set("toJSON", {
