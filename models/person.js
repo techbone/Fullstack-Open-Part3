@@ -1,8 +1,20 @@
 const mongoose = require("mongoose");
 
+// const phonebookSchema = new mongoose.Schema({
+//   name: String,
+//   number: Number,
+// });
 const phonebookSchema = new mongoose.Schema({
-  name: String,
-  number: Number,
+  name: {
+    type: String,
+    minLength: 5,
+    required: true,
+  },
+  number: {
+    type: String,
+    minLength: 8,
+    required: true,
+  },
 });
 
 phonebookSchema.set("toJSON", {
