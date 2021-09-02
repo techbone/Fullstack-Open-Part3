@@ -15,3 +15,11 @@ content-type:application/json
 }
 
 
+### put
+      PUT http://localhost:3001/api/persons/612e01fc43336ec7d7b43257
+      content-type:application/json
+
+      {
+        "name":"Musa Muhammad",
+        "number":"07963235226"
+      }
