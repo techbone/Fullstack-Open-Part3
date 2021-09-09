@@ -1,3 +1,5 @@
+/* eslint-disable semi */
+/* eslint-disable quotes */
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -8,7 +10,7 @@ app.use(express.json());
 app.use(express.static("build"));
 const cors = require("cors");
 app.use(cors());
-morgan.token("body", (req, res) => JSON.stringify(req.body));
+morgan.token("body", (req) => JSON.stringify(req.body));
 
 const Person = require("./models/person");
 
@@ -58,7 +60,7 @@ app.get("/api/persons", (request, response) => {
 });
 
 app.get("/api/info", (request, response) => {
-  let length = persons.length;
+  let length = Person.length;
   response.send(`<p>Phonebook has info of ${length} people</p><br/>
   ${new Date()}`);
 });
@@ -77,7 +79,7 @@ app.get("/api/persons/:id", (request, response, next) => {
 
 app.delete("/api/persons/:id", (request, response, next) => {
   Person.findByIdAndRemove(request.params.id)
-    .then((result) => {
+    .then(() => {
       response.status(204).end();
     })
     .catch((error) => next(error));

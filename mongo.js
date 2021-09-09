@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable semi */
 const mongoose = require("mongoose");
 
 if (process.argv.length < 3) {
@@ -61,7 +63,7 @@ const person = new Person({
 
 person
   .save()
-  .then((result) => {
+  .then(() => {
     console.log(`added ${name} number: ${number} to phonebook`);
     mongoose.connection.close();
   })
