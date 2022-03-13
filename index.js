@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(express.static("build"));
 const cors = require("cors");
 app.use(cors());
+
 morgan.token("body", (req) => JSON.stringify(req.body));
 
 const Person = require("./models/person");
